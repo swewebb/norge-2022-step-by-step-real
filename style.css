@@ -1,0 +1,152 @@
+/* Global Settings */
+
+:root {
+  --clr-red: #f65058;
+  --clr-blue: #3f4a75;
+  --clr-white: #ffffff;
+  --clr-black: #2e3440;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--clr-black);
+}
+
+/* Global Layout */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 800px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 7fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .header,
+  .footer {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Header */
+
+.header {
+  /* background-color: peachpuff; */
+
+  display: flex;
+  justify-content: center;
+}
+
+.header__link {
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--clr-red);
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.header__link:hover {
+  color: var(--clr-blue);
+}
+
+@media screen and (min-width: 800px) {
+  .header {
+    display: flex;
+    justify-content: start;
+  }
+
+  .header__logo {
+    padding: 1rem;
+  }
+
+  .header__link {
+    font-size: 4rem;
+  }
+}
+
+/* Global Navigation */
+
+/* .globalnav {
+  background-color: hotpink;
+} */
+
+.globalnav__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.globalnav__item {
+  padding: 0.2rem;
+}
+
+.globalnav__link {
+  display: block;
+  width: 100%;
+  background-color: var(--clr-blue);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--clr-white);
+  text-align: center;
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+}
+
+.globalnav__link:hover {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+}
+
+@media screen and (min-width: 800px) {
+  .globalnav {
+    padding: 0 1rem;
+  }
+
+  .globalnav__list {
+    display: block;
+  }
+
+  .globalnav__link {
+    padding: 0.5rem;
+  }
+}
+
+/* Content */
+
+.content {
+  /* background-color: yellowgreen; */
+  padding: 1rem 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    /* background-color: orange; */
+    max-width: 1000px;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--clr-blue);
+  padding: 1rem;
+  color: var(--clr-white);
+}
